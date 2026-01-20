@@ -30,50 +30,12 @@ COS30045_Data_Visualisation/
 	 ├─ README.md
 	 ├─ PRESENTATION_QA_GUIDE.md
 	 ├─ css/
-	 │  └─ styles.css
 	 ├─ data/
 	 │  ├─ fines/
-	 │  │  └─ enforcement_by_jurisdiction.csv
 	 │  ├─ positive_cases/
-	 │  │  ├─ total_fines_by_year_jurisdiction.csv
-	 │  │  ├─ total_positive_case_by_age.csv
-	 │  │  ├─ total_positive_case_by_year_by_jurisdiction.csv
-	 │  │  ├─ total_positive_case_by_year.csv
-	 │  │  └─ total_positive_case.csv
 	 │  └─ positive_drug_cases/
-	 │     ├─ drug_type_composition.csv
-	 │     ├─ positive_cases_by_age.csv
-	 │     ├─ sum_of_enforcement.csv
-	 │     ├─ total_cases_by_year_jurisdiction.csv
-	 │     ├─ total_cases_by_year.csv
-	 │     └─ total_cases.csv
 	 ├─ images/
 	 └─ js/
-			├─ bar_chart.js
-			├─ fines_charts.js
-			├─ fines_enforcement_heatmap.js
-			├─ grouped_bar_chart.js
-			├─ line_chart.js
-			├─ load_data.js
-			├─ main.js
-			├─ pie_chart.js
-			├─ stacked_bar_chart.js
-			├─ testing_alcohol_vs_drug_line.js
-			├─ testing_stacked_percentage.js
-			├─ testing_state_ranking_bar.js
-			├─ testing_total_bar_chart.js
-			└─ results-charts/
-				 ├─ age_bar_chart.js
-				 ├─ australia_heatmap.js
-				 ├─ drug_age_grouped_chart.js
-				 ├─ drug_enforcement_stacked_chart.js
-				 ├─ drug_type_bar_chart.js
-				 ├─ enforcement_outcomes_chart.js
-				 ├─ overall_positive_chart.js
-				 ├─ positive_breath_chart.js
-				 ├─ positive_drug_chart.js
-				 ├─ positive_drug_jurisdiction_chart.js
-				 └─ responsive_helper.js
 ```
 
 ## KNIME Workflows & Choice
