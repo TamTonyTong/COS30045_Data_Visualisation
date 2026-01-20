@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>Test Results - Australian Road Safety</title>
+    <link rel="icon" type="image/svg+xml" href="images/webicon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">Australian Road Safety Enforcement</h1>
+                
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="fines.html">Fines Analysis</a></li>
+                    <li><a href="testing.html">Testing Activity</a></li>
+                    <li><a href="results.html" class="active">Test Results</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Positive Test Results & Outcomes</h1>
+                <p class="page-description">
+                    Detailed analysis of positive breath and drug test results, 
+                    including substance-specific detections and enforcement outcomes.
+                </p>
+                
+                <!-- Impact Stats Banner - Breath Tests -->
+                <div style="margin-top: 30px; padding: 30px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 16px; box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3); text-align: center; color: white;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <div style="font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; margin-bottom: 10px;">Total Positive Breath Tests</div>
+                            <div id="total-positive-count" style="font-size: 56px; font-weight: 800; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                                <span style="opacity: 0.5;">Loading...</span>
+                            </div>
+                            <div style="font-size: 13px; margin-top: 10px; opacity: 0.9;">Alcohol-impaired drivers detected since 2008</div>
+                        </div>
+                        <div style="border-left: 2px solid rgba(255,255,255,0.3); height: 80px; display: none;" id="stats-divider"></div>
+                        <div style="flex: 1; min-width: 200px; text-align: left; max-width: 400px; display: none;" id="stats-message">
+                            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Every number represents a life at risk</div>
+                            <div style="font-size: 14px; opacity: 0.95; line-height: 1.5;">This data reflects real enforcement actions against alcohol-impaired driving across Australia. Together, we can reduce these numbers through awareness and responsibility.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact Stats Banner - Drug Tests -->
+                <div style="margin-top: 20px; padding: 30px; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); border-radius: 16px; box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3); text-align: center; color: white;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <div style="font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; margin-bottom: 10px;">Total Positive Drug Tests</div>
+                            <div id="total-drug-count" style="font-size: 56px; font-weight: 800; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                                <span style="opacity: 0.5;">Loading...</span>
+                            </div>
+                            <div style="font-size: 13px; margin-top: 10px; opacity: 0.9;">Drug-impaired drivers detected since 2008</div>
+                        </div>
+                        <div style="border-left: 2px solid rgba(255,255,255,0.3); height: 80px; display: none;" id="drug-stats-divider"></div>
+                        <div style="flex: 1; min-width: 200px; text-align: left; max-width: 400px; display: none;" id="drug-stats-message">
+                            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Growing Challenge</div>
+                            <div style="font-size: 14px; opacity: 0.95; line-height: 1.5;">Drug-impaired driving detections have shown significant growth over the years, highlighting the importance of continued enforcement and public awareness initiatives across Australia.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Positive Breath Tests Section -->
+        <section id="breath-tests" class="section">
+            <div class="container">
+                <h2 class="subsection-title">Positive Breath Tests</h2>
+                
+                <div class="visualizations-grid">
+                    <!-- Overall Trend Chart -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Overall Positive Breath Tests Trend</h3>
+                            <span class="viz-type">Line Chart</span>
+                        </div>
+                        <div id="overall-positive-chart" style="padding: 20px; width: 100%; max-width: 100%; overflow-x: auto;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Overall trend of positive breath tests from 2008 to 2024 across all Australian jurisdictions combined. Shows the big picture of alcohol-impaired driving detection over time, revealing a significant decline from peak years to present day.</p>
+                            <div style="margin-top: 12px; padding: 10px 12px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 4px;">
+                                <strong style="color: #92400e; font-size: 13px;">⚠️ Data Note:</strong>
+                                <span style="color: #78350f; font-size: 13px;"> TAS jurisdiction data is not available from 2020 onwards.</span>
+                            </div>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡 Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li>Positive breath tests peaked around 2010-2012 and have shown a <strong>consistent downward trend</strong> since then</li>
+                                    <li>By 2024, positive breath tests have <strong>decreased by approximately 60-70%</strong> from peak levels</li>
+                                    <li>The decline suggests improved compliance, effective enforcement, and successful public awareness campaigns</li>
+                                    <li>Recent years show stabilization at historically low levels, indicating sustained behavioral change</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- By Jurisdiction Chart -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Positive Breath Tests by Jurisdiction</h3>
+                            <span class="viz-type">Multi-Line Chart</span>
+                        </div>
+                        <div id="positive-breath-chart" style="padding: 20px; width: 100%; max-width: 100%; overflow-x: auto;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Compare positive breath test trends across individual jurisdictions from 2008 to 2024. Use the jurisdiction filters to focus on specific states and territories. Each state shows unique patterns in alcohol-impaired driving enforcement and prevalence.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡 Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>NSW and VIC</strong> historically show the highest absolute numbers of positive tests due to larger populations</li>
+                                    <li>All jurisdictions demonstrate a <strong>general declining trend</strong>, though at different rates and starting from different baselines</li>
+                                    <li><strong>QLD</strong> shows particularly strong reduction from mid-2010s onwards</li>
+                                    <li>Smaller jurisdictions like <strong>NT and ACT</strong> have relatively stable, low numbers throughout the period</li>
+                                    <li>Tasmania's data gap from 2020 onwards reflects changes in reporting practices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Australia Heat Map -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Australia Heat Map: Positive Cases by Jurisdiction</h3>
+                            <span class="viz-type">Interactive Heat Map</span>
+                        </div>
+                        <div id="australia-heatmap" style="padding: 20px; width: 100%; max-width: 100%; overflow-x: auto;">
+                            <!-- Heat map will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Interactive map visualization showing positive breath test distribution across Australian jurisdictions. Use the year slider to explore trends over time and identify which states had the highest positive test counts. Color intensity indicates the number of positive tests, with darker shades representing higher counts.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡 Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li>The heat map reveals <strong>geographic patterns</strong> in alcohol-impaired driving across Australia over time</li>
+                                    <li><strong>Eastern states</strong> (NSW, VIC, QLD) show darker colors indicating higher detection rates in peak years</li>
+                                    <li>Using the year slider shows a <strong>"cooling effect"</strong> - colors become lighter over time, visualizing the decline</li>
+                                    <li>The visualization makes it easy to compare relative severity across jurisdictions at any given year</li>
+                                    <li>Population centers correlate with darker shading, but per-capita rates may differ significantly</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Age Bar Chart -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Age Group Distribution (2023 vs 2024)</h3>
+                            <span class="viz-type">Bar Chart</span>
+                        </div>
+                        <div id="age-bar-chart" style="padding: 20px; width: 100%; max-width: 100%; overflow-x: auto;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Analyze positive breath test distribution across different age groups for 2023 and 2024. The data reveals which age demographics are most frequently detected for alcohol-impaired driving, with detailed breakdowns available from 2023 onwards.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡 Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li>The <strong>25-39 age group</strong> typically shows the highest number of positive breath tests</li>
+                                    <li><strong>Young adults (17-24)</strong> represent a significant portion, highlighting a key demographic for targeted interventions</li>
+                                    <li>Middle-aged groups (40-54) maintain consistent detection rates across both years</li>
+                                    <li>Older age groups (55+) show <strong>lower positive test rates</strong>, suggesting better compliance or different driving patterns</li>
+                                    <li>Year-over-year comparison helps identify if specific age groups are trending up or down</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Enforcement Outcomes</h3>
+                            <span class="viz-type">Stacked Bar Chart</span>
+                        </div>
+                        <div id="enforcement-outcomes-chart" style="padding: 20px; width: 100%; max-width: 100%; overflow-x: auto;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Track enforcement outcomes over time: Fines, Arrests, and Charges resulting from positive breath tests. Compare trends across jurisdictions to understand how enforcement severity varies by state and year.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡 Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>Fines</strong> are the most common enforcement action, showing high volume but declining with overall positive tests</li>
+                                    <li><strong>Arrests and charges</strong> are reserved for more serious offenses or repeat offenders</li>
+                                    <li>Different jurisdictions show <strong>varying enforcement philosophies</strong> - some favor fines while others use arrests more frequently</li>
+                                    <li>The ratio of outcomes to positive tests reveals enforcement consistency and legal framework differences</li>
+                                    <li>Declining trends across all outcome types mirror the overall reduction in positive breath tests</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Positive Drug Tests Section -->
+        <section id="drug-tests" class="section section-alt">
+            <div class="container">
+                <h2 class="subsection-title">Positive Drug Tests</h2>
+                
+                <div class="visualizations-grid">
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Positive Drug Tests Over Time</h3>
+                            <span class="viz-type">Line Chart</span>
+                        </div>
+                        <div id="positive-drug-chart" style="padding: 20px; width: 100%; max-width: 100%; overflow-x: auto;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Track trends in drug-impaired driving over time from 2008 to 2024. This chart shows a significant upward trajectory in positive drug test detections, revealing the growing prevalence and improved detection of drug-impaired driving across Australia.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡 Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li>Drug-impaired driving shows a <strong>stark contrast to alcohol</strong> - positive tests have <strong>increased dramatically</strong> over time</li>
+                                    <li>The trend line shows <strong>sustained growth</strong> from 2008 onwards, with acceleration in recent years</li>
+                                    <li>This increase reflects both <strong>expanded testing programs</strong> and genuine rise in drug-impaired driving prevalence</li>
+                                    <li>The data highlights an <strong>emerging public safety challenge</strong> requiring different intervention strategies than alcohol</li>
+                                    <li>By 2024, positive drug tests have <strong>increased several-fold</strong> compared to 2008 baseline levels</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Positive Drug Tests by Jurisdiction</h3>
+                            <span class="viz-type">Multi-Line Chart</span>
+                        </div>
+                        <div id="positive-drug-jurisdiction-chart" style="padding: 20px; width: 100%; max-width: 100%; overflow-x: auto;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Compare positive drug test trends across individual jurisdictions from 2008 to 2024. Click on the legend items to show or hide specific states and territories. This visualization reveals how drug-impaired driving detection varies significantly across different regions of Australia.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡 Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>VIC and NSW</strong> show the steepest growth curves, with dramatic increases from low baselines</li>
+                                    <li><strong>QLD</strong> demonstrates consistently high numbers throughout the period with continued growth</li>
+                                    <li>Each jurisdiction shows <strong>upward trajectory</strong>, indicating this is a nationwide trend, not isolated to specific regions</li>
+                                    <li>Rate of increase varies - some states show <strong>exponential growth</strong> while others have steadier linear increases</li>
+                                    <li>Differences reflect varying <strong>testing program rollouts</strong>, enforcement priorities, and potentially regional drug use patterns</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Detected Substances</h3>
+                            <span class="viz-type">Bar Chart</span>
+                        </div>
+                        <div id="drug-type-bar-chart" style="padding: 20px; width: 100%; max-width: 100%; overflow-x: auto;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Visualize the breakdown of specific substances detected: AMPHETAMINE, CANNABIS, COCAINE, ECSTASY, METHYLAMPHETAMINE, and others. This chart reveals which drugs are most commonly found in roadside testing and helps understand drug prevalence patterns across Australia.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡 Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>Methylamphetamine (ice/meth)</strong> is typically the most frequently detected drug in roadside testing</li>
+                                    <li><strong>Cannabis (THC)</strong> ranks as the second most common substance, reflecting its widespread recreational use</li>
+                                    <li><strong>Cocaine and ecstasy/MDMA</strong> show lower but significant detection rates, varying by region</li>
+                                    <li>Multiple substance detection is common - drivers may test positive for <strong>more than one drug</strong></li>
+                                    <li>Detection patterns reflect both <strong>prevalence in the community</strong> and the sensitivity of testing methods</li>
+                                    <li>The drug composition highlights the need for <strong>substance-specific public education campaigns</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Enforcement Outcomes by Jurisdiction</h3>
+                            <span class="viz-type">Stacked Bar Chart</span>
+                        </div>
+                        <div id="drug-enforcement-stacked-chart" style="padding: 20px; width: 100%; max-width: 100%; overflow-x: auto;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Compare enforcement outcomes (positive tests and charges) across jurisdictions for 2023 and 2024. This stacked bar chart reveals the relationship between positive drug tests and actual charges filed, highlighting variations in enforcement practices across different states and territories.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡 Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li>The stacked format reveals the <strong>charge rate</strong> - how many positive tests result in formal charges</li>
+                                    <li>Different jurisdictions show <strong>varying enforcement approaches</strong>, with some having higher charge-to-test ratios</li>
+                                    <li><strong>2024 data</strong> shows continued growth in both positive tests and charges across most jurisdictions</li>
+                                    <li>Larger states (VIC, NSW, QLD) dominate total volumes but smaller jurisdictions may have higher per-capita rates</li>
+                                    <li>The ratio between test results and charges indicates differences in <strong>legal thresholds, confirmation processes, and prosecution policies</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Age Group Distribution (2023 vs 2024)</h3>
+                            <span class="viz-type">Grouped Bar Chart</span>
+                        </div>
+                        <div id="drug-age-grouped-chart" style="padding: 20px; width: 100%; max-width: 100%; overflow-x: auto;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Compare positive drug test distribution across age groups for 2023 and 2024. This grouped bar chart displays year-over-year trends, making it easy to identify which age demographics are most affected by drug-impaired driving and how patterns are changing over time.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡 Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>Younger age groups (17-39)</strong> show the highest rates of positive drug tests, particularly 25-39 demographic</li>
+                                    <li>Drug-impaired driving age distribution is <strong>younger-skewed</strong> compared to alcohol, reflecting different substance use patterns</li>
+                                    <li><strong>Year-over-year comparison</strong> reveals whether specific age groups are increasing or stabilizing</li>
+                                    <li>The <strong>17-24 age group</strong> represents a critical target for intervention programs and education initiatives</li>
+                                    <li>Older age groups (55+) show significantly lower positive drug test rates across both years</li>
+                                    <li>Patterns suggest need for <strong>age-appropriate messaging</strong> and intervention strategies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <!-- Substance Information Panel -->
+                <div class="substance-info">
+                    <h3>Detected Substances</h3>
+                    <p>The positive drug tests dataset captures multiple substance types detected in roadside testing:</p>
+                    <div class="substance-grid">
+                        <div class="substance-card">
+                            <div class="substance-name">Amphetamine</div>
+                            <p>Stimulant drugs including methamphetamine</p>
+                        </div>
+                        <div class="substance-card">
+                            <div class="substance-name">Cannabis</div>
+                            <p>THC-based substances</p>
+                        </div>
+                        <div class="substance-card">
+                            <div class="substance-name">Cocaine</div>
+                            <p>Powerful stimulant drug</p>
+                        </div>
+                        <div class="substance-card">
+                            <div class="substance-name">Ecstasy/MDMA</div>
+                            <p>Synthetic party drugs</p>
+                        </div>
+                        <div class="substance-card">
+                            <div class="substance-name">Other Substances</div>
+                            <p>Additional detected drugs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Australian Road Safety Enforcement Visualization | Data from BITRE</p>
+        </div>
+    </footer>
+
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- Responsive Helper -->
+    <script src="js/results-charts/responsive_helper.js"></script>
+    
+    <!-- Chart Scripts (Results Page) -->
+    <script src="js/results-charts/overall_positive_chart.js"></script>
+    <script src="js/results-charts/positive_breath_chart.js"></script>
+    <script src="js/results-charts/australia_heatmap.js"></script>
+    <script src="js/results-charts/age_bar_chart.js"></script>
+    <script src="js/results-charts/enforcement_outcomes_chart.js"></script>
+    <script src="js/results-charts/positive_drug_chart.js"></script>
+    <script src="js/results-charts/positive_drug_jurisdiction_chart.js"></script>
+    <script src="js/results-charts/drug_type_bar_chart.js"></script>
+    <script src="js/results-charts/drug_enforcement_stacked_chart.js"></script>
+    <script src="js/results-charts/drug_age_grouped_chart.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Initialize Charts -->
+    <script>
+        // Load and display total positive breath test count
+        async function loadTotalPositiveCount() {
+            try {
+                const data = await d3.csv('data/positive_cases/total_positive_case.csv');
+                const totalCount = +data[0].COUNT;
+                
+                // Format number with commas
+                const formattedCount = totalCount.toLocaleString();
+                
+                // Update the display with animation
+                const countElement = document.getElementById('total-positive-count');
+                countElement.innerHTML = formattedCount;
+                
+                // Show the additional message after count loads
+                setTimeout(() => {
+                    document.getElementById('stats-divider').style.display = 'block';
+                    document.getElementById('stats-message').style.display = 'block';
+                }, 500);
+                
+                console.log('✓ Total positive breath test count loaded:', formattedCount);
+            } catch (error) {
+                console.error('Error loading total count:', error);
+                document.getElementById('total-positive-count').innerHTML = 
+                    '<span style="font-size: 24px;">Data unavailable</span>';
+            }
+        }
+
+        // Load and display total positive drug test count
+        async function loadTotalDrugCount() {
+            try {
+                const data = await d3.csv('data/positive_drug_cases/total_cases.csv');
+                const totalCount = +data[0]['Sum(Sum(COUNT))'];
+                
+                // Format number with commas
+                const formattedCount = totalCount.toLocaleString();
+                
+                // Update the display with animation
+                const countElement = document.getElementById('total-drug-count');
+                countElement.innerHTML = formattedCount;
+                
+                // Show the additional message after count loads
+                setTimeout(() => {
+                    document.getElementById('drug-stats-divider').style.display = 'block';
+                    document.getElementById('drug-stats-message').style.display = 'block';
+                }, 500);
+                
+                console.log('✓ Total positive drug test count loaded:', formattedCount);
+            } catch (error) {
+                console.error('Error loading drug count:', error);
+                document.getElementById('total-drug-count').innerHTML = 
+                    '<span style="font-size: 24px;">Data unavailable</span>';
+            }
+        }
+
+        // Initialize and render all charts
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Apply responsive chart helpers
+            const chartIds = [
+                'overall-positive-chart',
+                'positive-breath-chart',
+                'australia-heatmap',
+                'age-bar-chart',
+                'enforcement-outcomes-chart',
+                'positive-drug-chart',
+                'positive-drug-jurisdiction-chart',
+                'drug-type-bar-chart',
+                'drug-enforcement-stacked-chart',
+                'drug-age-grouped-chart'
+            ];
+
+            // Make all chart containers scrollable on mobile
+            chartIds.forEach(id => {
+                ResponsiveChartHelper.makeScrollable(id);
+            });
+
+            // Load total counts first for impact
+            loadTotalPositiveCount();
+            loadTotalDrugCount();
+
+            // Overall trend chart (all jurisdictions combined)
+            try {
+                const overallChart = new OverallPositiveChart('overall-positive-chart');
+                await overallChart.loadData('data/positive_cases/total_positive_case_by_year.csv');
+                overallChart.init();
+                overallChart.render();
+                console.log('✓ Overall Positive Breath Tests chart loaded successfully');
+            } catch (error) {
+                console.error('Error initializing overall chart:', error);
+                document.getElementById('overall-positive-chart').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading chart</strong><br>' +
+                    'Please ensure the data file exists at data/positive_cases/total_positive_case_by_year.csv' +
+                    '</div>';
+            }
+
+            // By jurisdiction chart
+            try {
+                const jurisdictionChart = new PositiveBreathChart('positive-breath-chart');
+                await jurisdictionChart.loadData('data/positive_cases/total_positive_case_by_year_by_jurisdiction.csv');
+                jurisdictionChart.init();
+                jurisdictionChart.render();
+                console.log('✓ Positive Breath Tests by Jurisdiction chart loaded successfully');
+            } catch (error) {
+                console.error('Error initializing jurisdiction chart:', error);
+                document.getElementById('positive-breath-chart').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading chart</strong><br>' +
+                    'Please ensure the data file exists at data/positive_cases/total_positive_case_by_year_by_jurisdiction.csv' +
+                    '</div>';
+            }
+
+            // Australia heat map
+            try {
+                const heatMap = new AustraliaHeatMap('australia-heatmap');
+                await heatMap.loadData('data/positive_cases/total_positive_case_by_year_by_jurisdiction.csv');
+                heatMap.init();
+                heatMap.render();
+                console.log('✓ Australia Heat Map loaded successfully');
+            } catch (error) {
+                console.error('Error initializing heat map:', error);
+                document.getElementById('australia-heatmap').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading heat map</strong><br>' +
+                    'Please ensure the data file exists at data/positive_cases/total_positive_case_by_year_by_jurisdiction.csv' +
+                    '</div>';
+            }
+
+            // Age bar chart
+            try {
+                const ageChart = new AgeBarChart('age-bar-chart');
+                await ageChart.loadData('data/positive_cases/total_positive_case_by_age.csv');
+                ageChart.init();
+                ageChart.render();
+                console.log('✓ Age Bar Chart loaded successfully');
+            } catch (error) {
+                console.error('Error initializing age chart:', error);
+                document.getElementById('age-bar-chart').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading chart</strong><br>' +
+                    'Please ensure the data file exists at data/positive_cases/total_positive_case_by_age.csv' +
+                    '</div>';
+            }
+
+            // Enforcement outcomes chart
+            try {
+                const enforcementChart = new EnforcementOutcomesChart('enforcement-outcomes-chart');
+                await enforcementChart.loadData('data/positive_cases/total_fines_by_year_jurisdiction.csv');
+                enforcementChart.init();
+                enforcementChart.render();
+                console.log('✓ Enforcement Outcomes Chart loaded successfully');
+            } catch (error) {
+                console.error('Error initializing enforcement chart:', error);
+                document.getElementById('enforcement-outcomes-chart').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading chart</strong><br>' +
+                    'Please ensure the data file exists at data/positive_cases/total_fines_by_year_jurisdiction.csv' +
+                    '</div>';
+            }
+
+            // Positive drug tests chart
+            try {
+                const drugChart = new PositiveDrugChart('positive-drug-chart');
+                await drugChart.loadData('data/positive_drug_cases/total_cases_by_year.csv');
+                drugChart.init();
+                drugChart.render();
+                console.log('\u2713 Positive Drug Tests Chart loaded successfully');
+            } catch (error) {
+                console.error('Error initializing drug chart:', error);
+                document.getElementById('positive-drug-chart').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading chart</strong><br>' +
+                    'Please ensure the data file exists at data/positive_drug_cases/total_cases_by_year.csv' +
+                    '</div>';
+            }
+
+            // Positive drug tests by jurisdiction chart
+            try {
+                const drugJurisdictionChart = new PositiveDrugJurisdictionChart('positive-drug-jurisdiction-chart');
+                await drugJurisdictionChart.loadData('data/positive_drug_cases/total_cases_by_year_jurisdiction.csv');
+                drugJurisdictionChart.init();
+                drugJurisdictionChart.render();
+                console.log('\u2713 Positive Drug Tests by Jurisdiction Chart loaded successfully');
+            } catch (error) {
+                console.error('Error initializing drug jurisdiction chart:', error);
+                document.getElementById('positive-drug-jurisdiction-chart').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading chart</strong><br>' +
+                    'Please ensure the data file exists at data/positive_drug_cases/total_cases_by_year_jurisdiction.csv' +
+                    '</div>';
+            }
+
+            // Drug type composition bar chart
+            try {
+                const drugTypeChart = new DrugTypeBarChart('drug-type-bar-chart');
+                await drugTypeChart.loadData('data/positive_drug_cases/drug_type_composition.csv');
+                drugTypeChart.init();
+                drugTypeChart.render();
+                console.log('\u2713 Drug Type Bar Chart loaded successfully');
+            } catch (error) {
+                console.error('Error initializing drug type chart:', error);
+                document.getElementById('drug-type-bar-chart').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading chart</strong><br>' +
+                    'Please ensure the data file exists at data/positive_drug_cases/drug_type_composition.csv' +
+                    '</div>';
+            }
+
+            // Drug enforcement stacked chart
+            try {
+                const drugEnforcementChart = new DrugEnforcementStackedChart('drug-enforcement-stacked-chart');
+                await drugEnforcementChart.loadData('data/positive_drug_cases/sum_of_enforcement.csv');
+                drugEnforcementChart.init();
+                drugEnforcementChart.render();
+                console.log('\u2713 Drug Enforcement Stacked Chart loaded successfully');
+            } catch (error) {
+                console.error('Error initializing drug enforcement chart:', error);
+                document.getElementById('drug-enforcement-stacked-chart').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading chart</strong><br>' +
+                    'Please ensure the data file exists at data/positive_drug_cases/sum_of_enforcement.csv' +
+                    '</div>';
+            }
+
+            // Drug age grouped chart
+            try {
+                const drugAgeChart = new DrugAgeGroupedChart('drug-age-grouped-chart');
+                await drugAgeChart.loadData('data/positive_drug_cases/positive_cases_by_age.csv');
+                drugAgeChart.init();
+                drugAgeChart.render();
+                console.log('\u2713 Drug Age Grouped Chart loaded successfully');
+            } catch (error) {
+                console.error('Error initializing drug age chart:', error);
+                document.getElementById('drug-age-grouped-chart').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading chart</strong><br>' +
+                    'Please ensure the data file exists at data/positive_drug_cases/positive_cases_by_age.csv' +
+                    '</div>';
+            }
+        });
+    </script>
+
+</body>
+</html>

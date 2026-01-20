@@ -1,0 +1,186 @@
+"YEAR","JURISDICTION","AGE_GROUP","METRIC","COUNT"
+2008,"ACT","All ages","positive_breath_tests",1887
+2008,"NSW","All ages","positive_breath_tests",27368
+2008,"NT","All ages","positive_breath_tests",9460
+2008,"QLD","All ages","positive_breath_tests",26975
+2008,"SA","All ages","positive_breath_tests",10467
+2008,"TAS","All ages","positive_breath_tests",4563
+2008,"VIC","All ages","positive_breath_tests",19190
+2008,"WA","All ages","positive_breath_tests",14532
+2009,"ACT","All ages","positive_breath_tests",1628
+2009,"NSW","All ages","positive_breath_tests",26595
+2009,"NT","All ages","positive_breath_tests",10990
+2009,"QLD","All ages","positive_breath_tests",32696
+2009,"SA","All ages","positive_breath_tests",10954
+2009,"TAS","All ages","positive_breath_tests",5120
+2009,"VIC","All ages","positive_breath_tests",18246
+2009,"WA","All ages","positive_breath_tests",13039
+2010,"ACT","All ages","positive_breath_tests",1447
+2010,"NSW","All ages","positive_breath_tests",24411
+2010,"NT","All ages","positive_breath_tests",10842
+2010,"QLD","All ages","positive_breath_tests",33638
+2010,"SA","All ages","positive_breath_tests",10172
+2010,"TAS","All ages","positive_breath_tests",3895
+2010,"VIC","All ages","positive_breath_tests",16297
+2010,"WA","All ages","positive_breath_tests",11595
+2011,"ACT","All ages","positive_breath_tests",1488
+2011,"NSW","All ages","positive_breath_tests",22117
+2011,"NT","All ages","positive_breath_tests",8914
+2011,"QLD","All ages","positive_breath_tests",27264
+2011,"SA","All ages","positive_breath_tests",10034
+2011,"TAS","All ages","positive_breath_tests",3527
+2011,"VIC","All ages","positive_breath_tests",13925
+2011,"WA","All ages","positive_breath_tests",10644
+2012,"ACT","All ages","positive_breath_tests",1418
+2012,"NSW","All ages","positive_breath_tests",19982
+2012,"NT","All ages","positive_breath_tests",9332
+2012,"QLD","All ages","positive_breath_tests",25320
+2012,"SA","All ages","positive_breath_tests",9267
+2012,"TAS","All ages","positive_breath_tests",2916
+2012,"VIC","All ages","positive_breath_tests",13033
+2012,"WA","All ages","positive_breath_tests",9737
+2013,"ACT","All ages","positive_breath_tests",1399
+2013,"NSW","All ages","positive_breath_tests",20193
+2013,"NT","All ages","positive_breath_tests",12395
+2013,"QLD","All ages","positive_breath_tests",25291
+2013,"SA","All ages","positive_breath_tests",8890
+2013,"TAS","All ages","positive_breath_tests",2782
+2013,"VIC","All ages","positive_breath_tests",11442
+2013,"WA","All ages","positive_breath_tests",8636
+2014,"ACT","All ages","positive_breath_tests",1267
+2014,"NSW","All ages","positive_breath_tests",19531
+2014,"NT","All ages","positive_breath_tests",13562
+2014,"QLD","All ages","positive_breath_tests",23023
+2014,"SA","All ages","positive_breath_tests",8154
+2014,"TAS","All ages","positive_breath_tests",2585
+2014,"VIC","All ages","positive_breath_tests",12062
+2014,"WA","All ages","positive_breath_tests",11034
+2015,"ACT","All ages","positive_breath_tests",1134
+2015,"NSW","All ages","positive_breath_tests",18750
+2015,"NT","All ages","positive_breath_tests",14192
+2015,"QLD","All ages","positive_breath_tests",20357
+2015,"SA","All ages","positive_breath_tests",8208
+2015,"TAS","All ages","positive_breath_tests",2327
+2015,"VIC","All ages","positive_breath_tests",9315
+2015,"WA","All ages","positive_breath_tests",10071
+2016,"ACT","All ages","positive_breath_tests",1005
+2016,"NSW","All ages","positive_breath_tests",17442
+2016,"NT","All ages","positive_breath_tests",7571
+2016,"QLD","All ages","positive_breath_tests",18673
+2016,"SA","All ages","positive_breath_tests",5155
+2016,"TAS","All ages","positive_breath_tests",2322
+2016,"VIC","All ages","positive_breath_tests",10337
+2016,"WA","All ages","positive_breath_tests",8912
+2017,"ACT","All ages","positive_breath_tests",1057
+2017,"NSW","All ages","positive_breath_tests",18022
+2017,"NT","All ages","positive_breath_tests",7846
+2017,"QLD","All ages","positive_breath_tests",16489
+2017,"SA","All ages","positive_breath_tests",6007
+2017,"TAS","All ages","positive_breath_tests",2070
+2017,"VIC","All ages","positive_breath_tests",9969
+2017,"WA","All ages","positive_breath_tests",9062
+2018,"ACT","All ages","positive_breath_tests",1114
+2018,"NSW","All ages","positive_breath_tests",17989
+2018,"NT","All ages","positive_breath_tests",7672
+2018,"QLD","All ages","positive_breath_tests",16773
+2018,"SA","All ages","positive_breath_tests",4997
+2018,"TAS","All ages","positive_breath_tests",1723
+2018,"VIC","All ages","positive_breath_tests",7025
+2018,"WA","All ages","positive_breath_tests",7550
+2019,"ACT","All ages","positive_breath_tests",933
+2019,"NSW","All ages","positive_breath_tests",17084
+2019,"NT","All ages","positive_breath_tests",7775
+2019,"QLD","All ages","positive_breath_tests",16685
+2019,"SA","All ages","positive_breath_tests",4985
+2019,"TAS","All ages","positive_breath_tests",1805
+2019,"VIC","All ages","positive_breath_tests",9235
+2019,"WA","All ages","positive_breath_tests",6878
+2020,"ACT","All ages","positive_breath_tests",888
+2020,"NSW","All ages","positive_breath_tests",13540
+2020,"NT","All ages","positive_breath_tests",7362
+2020,"QLD","All ages","positive_breath_tests",16060
+2020,"SA","All ages","positive_breath_tests",4400
+2020,"VIC","All ages","positive_breath_tests",4976
+2020,"WA","All ages","positive_breath_tests",7510
+2021,"ACT","All ages","positive_breath_tests",767
+2021,"NSW","All ages","positive_breath_tests",12980
+2021,"NT","All ages","positive_breath_tests",5492
+2021,"QLD","All ages","positive_breath_tests",16402
+2021,"SA","All ages","positive_breath_tests",4062
+2021,"VIC","All ages","positive_breath_tests",6363
+2021,"WA","All ages","positive_breath_tests",7417
+2022,"ACT","All ages","positive_breath_tests",847
+2022,"NSW","All ages","positive_breath_tests",15794
+2022,"NT","All ages","positive_breath_tests",5120
+2022,"QLD","All ages","positive_breath_tests",17007
+2022,"SA","All ages","positive_breath_tests",4556
+2022,"VIC","All ages","positive_breath_tests",8280
+2022,"WA","All ages","positive_breath_tests",7331
+2023,"ACT","17-25","positive_breath_tests",203
+2023,"ACT","26-39","positive_breath_tests",299
+2023,"ACT","40-64","positive_breath_tests",225
+2023,"ACT","65 and over","positive_breath_tests",14
+2023,"ACT","Unknown","positive_breath_tests",1
+2023,"NSW","0-16","positive_breath_tests",25
+2023,"NSW","17-25","positive_breath_tests",3296
+2023,"NSW","26-39","positive_breath_tests",5038
+2023,"NSW","40-64","positive_breath_tests",5058
+2023,"NSW","65 and over","positive_breath_tests",553
+2023,"NSW","Unknown","positive_breath_tests",1
+2023,"NT","0-16","positive_breath_tests",0
+2023,"NT","17-25","positive_breath_tests",0
+2023,"NT","26-39","positive_breath_tests",0
+2023,"NT","65 and over","positive_breath_tests",0
+2023,"NT","Unknown","positive_breath_tests",7722
+2023,"QLD","All ages","positive_breath_tests",15859
+2023,"SA","0-16","positive_breath_tests",4
+2023,"SA","17-25","positive_breath_tests",739
+2023,"SA","26-39","positive_breath_tests",1593
+2023,"SA","40-64","positive_breath_tests",1717
+2023,"SA","65 and over","positive_breath_tests",280
+2023,"SA","Unknown","positive_breath_tests",0
+2023,"VIC","0-16","positive_breath_tests",3
+2023,"VIC","17-25","positive_breath_tests",1417
+2023,"VIC","26-39","positive_breath_tests",3199
+2023,"VIC","40-64","positive_breath_tests",3208
+2023,"VIC","65 and over","positive_breath_tests",428
+2023,"VIC","Unknown","positive_breath_tests",2
+2023,"WA","0-16","positive_breath_tests",23
+2023,"WA","17-25","positive_breath_tests",1990
+2023,"WA","26-39","positive_breath_tests",3283
+2023,"WA","40-64","positive_breath_tests",2660
+2023,"WA","65 and over","positive_breath_tests",342
+2023,"WA","Unknown","positive_breath_tests",1
+2024,"ACT","17-25","positive_breath_tests",165
+2024,"ACT","26-39","positive_breath_tests",266
+2024,"ACT","40-64","positive_breath_tests",194
+2024,"ACT","65 and over","positive_breath_tests",19
+2024,"NSW","0-16","positive_breath_tests",23
+2024,"NSW","17-25","positive_breath_tests",3049
+2024,"NSW","26-39","positive_breath_tests",4847
+2024,"NSW","40-64","positive_breath_tests",4519
+2024,"NSW","65 and over","positive_breath_tests",557
+2024,"NT","0-16","positive_breath_tests",0
+2024,"NT","17-25","positive_breath_tests",0
+2024,"NT","26-39","positive_breath_tests",0
+2024,"NT","40-64","positive_breath_tests",0
+2024,"NT","65 and over","positive_breath_tests",0
+2024,"NT","Unknown","positive_breath_tests",8717
+2024,"QLD","All ages","positive_breath_tests",15336
+2024,"SA","0-16","positive_breath_tests",11
+2024,"SA","17-25","positive_breath_tests",825
+2024,"SA","26-39","positive_breath_tests",1603
+2024,"SA","40-64","positive_breath_tests",1711
+2024,"SA","65 and over","positive_breath_tests",283
+2024,"SA","Unknown","positive_breath_tests",1
+2024,"VIC","0-16","positive_breath_tests",2
+2024,"VIC","17-25","positive_breath_tests",1138
+2024,"VIC","26-39","positive_breath_tests",2060
+2024,"VIC","40-64","positive_breath_tests",1956
+2024,"VIC","65 and over","positive_breath_tests",248
+2024,"VIC","Unknown","positive_breath_tests",3
+2024,"WA","0-16","positive_breath_tests",25
+2024,"WA","17-25","positive_breath_tests",2310
+2024,"WA","26-39","positive_breath_tests",4175
+2024,"WA","40-64","positive_breath_tests",3385
+2024,"WA","65 and over","positive_breath_tests",373

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>Fines Analysis - Australian Road Safety</title>
+    <link rel="icon" type="image/svg+xml" href="images/webicon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- HEADER / NAV -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">Australian Road Safety Enforcement</h1>
+
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="fines.html" class="active">Fines Analysis</a></li>
+                    <li><a href="testing.html">Testing Activity</a></li>
+                    <li><a href="results.html">Test Results</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- PAGE HEADER (matches style of Results page sections) -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Traffic Fines & Enforcement</h1>
+                <p class="page-description">
+                    Analysis of traffic-related fines, arrests, and charges by offense type,
+                    jurisdiction, detection method, and driver demographics.
+                </p>
+            </div>
+        </section>
+
+        <!-- OVERVIEW / DATASET SUMMARY -->
+        <section id="fines-overview" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About the Fines Dataset</h2>
+                    <p class="section-lead">
+                        This dataset captures the results of road safety enforcement activities, including
+                        fines, arrests, and charges across Australian jurisdictions. It draws from
+                        BITRE’s police enforcement series and aligns with the narrative presented in the main story.
+                    </p>
+                </div>
+
+                <!-- Key Metrics Summary (matches your existing metric-card style) -->
+                <div class="metrics-summary">
+                    <h3>Key Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+
+                            <div class="metric-label">COUNT</div>
+                            <div class="metric-description">Total number of offenses recorded</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">FINES</div>
+                            <div class="metric-description">Monetary penalties issued</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">ARRESTS</div>
+                            <div class="metric-description">Number of arrests following enforcement</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">CHARGES</div>
+                            <div class="metric-description">Legal charges filed after incidents</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISUALISATIONS (same layout style as results.html) -->
+        <section id="fines" class="section">
+            <div class="container">
+                <h2 class="subsection-title">Fines & Enforcement Visualisations</h2>
+                <p class="section-lead">
+                    These charts are built directly from the fines dataset (Excel) to help general audiences
+                    quickly understand where enforcement is concentrated, how it changes over time, and
+                    which groups are most affected.
+                </p>
+
+                <div class="visualizations-grid">
+                    <!-- Offense Type Distribution -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Offense Type Distribution</h3>
+                            <span class="viz-type">Bar Chart</span>
+                        </div>
+                        <!-- STYLE MATCHES RESULTS PAGE: padding: 20px; -->
+                        <div id="offense-distribution-chart" class="chart-scroll" style="padding: 20px;">
+                            <!-- Chart will be rendered here by fines_charts.js -->
+                        </div>
+                        <div class="viz-description">
+                            <div
+                                style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡
+                                    Key Insights:</strong>
+                                <ul
+                                    style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>Speeding overwhelmingly dominates</strong> the dataset, representing
+                                        roughly <strong>94%</strong> of total fine value.</li>
+                                    <li>Mobile phone offences contribute around <strong>5%</strong>, with seatbelt and
+                                        unlicensed driving adding under <strong>2%</strong> combined.</li>
+                                    <li>The distribution highlights a strong enforcement focus on excessive speed,
+                                        aligned with road safety priorities.</li>
+                                    <li>Smaller offence categories remain important due to their high-risk nature,
+                                        despite lower total monetary impact.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Time Series Trends -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Trends Over Time</h3>
+                            <span class="viz-type">Line Chart</span>
+                        </div>
+                        <!-- same style pattern as overall-positive-chart container -->
+                        <div id="trends-chart" class="chart-scroll" style="padding: 20px;">
+                            <!-- Chart will be rendered here by fines_charts.js -->
+                        </div>
+                        <div class="viz-description">
+                            <div
+                                style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡
+                                    Key Insights:</strong>
+                                <ul
+                                    style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li>Total fine amounts have risen by around <strong>40%</strong> across the 16-year
+                                        period.</li>
+                                    <li>The highest peak appears in <strong>2021</strong>, nearly
+                                        <strong>double</strong> the early-decade values.</li>
+                                    <li>Even after 2021, overall fine levels remain consistently higher than earlier
+                                        years.</li>
+                                    <li>The trend suggests sustained enforcement intensity and increasing road safety
+                                        measures over time.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jurisdiction Comparison Heat Map -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Jurisdiction Comparison</h3>
+                            <span class="viz-type">Interactive Heat Map</span>
+                        </div>
+                        <div id="fines-enforcement-heatmap" style="padding: 20px;">
+                            <!-- Heat map will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <div
+                                style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡
+                                    Key Insights:</strong>
+                                <ul
+                                    style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>VIC, NSW, QLD and WA</strong> collectively make up over
+                                        <strong>90%</strong> of all fines issued nationwide.</li>
+                                    <li><strong>Victoria</strong> contributes the largest share, around one-third of
+                                        national fine value.</li>
+                                    <li>Smaller jurisdictions (NT, TAS, ACT, SA) show lower totals but maintain
+                                        consistent enforcement relative to their population size.</li>
+                                    <li>The differences reflect population, traffic density, enforcement strategies, and
+                                        camera deployment levels.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detection Method Impact -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Detection Method Impact</h3>
+                            <span class="viz-type">Bar Chart</span>
+                        </div>
+                        <div id="detection-method-chart" class="chart-scroll" style="padding: 20px;">
+                            <!-- Chart will be rendered here by fines_charts.js -->
+                        </div>
+                        <div class="viz-description">                  
+                            <div
+                                style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡
+                                    Key Insights:</strong>
+                                <ul
+                                    style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>Automated cameras</strong> (fixed + mobile) generate nearly
+                                        <strong>80%</strong> of all fines, confirming their central role in enforcement.
+                                    </li>
+                                    <li><strong>Police-issued infringements</strong> account for around
+                                        <strong>10%</strong>, showing targeted officer enforcement.</li>
+                                    <li>Mobile and fixed cameras individually contribute <strong>4–5%</strong>,
+                                        reflecting their wide distribution on road networks.</li>
+                                    <li>Red-light cameras generate a small but important portion (~<strong>1%</strong>),
+                                        focused on high-risk intersections.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Age Group Analysis -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Age Group Analysis</h3>
+                            <span class="viz-type">Demographic Breakdown</span>
+                        </div>
+                        <div id="age-group-chart" class="chart-scroll" style="padding: 20px;">
+                            <!-- Chart will be rendered here by fines_charts.js -->
+                        </div>
+                        <div class="viz-description">
+                            <div
+                                style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">💡
+                                    Key Insights:</strong>
+                                <ul
+                                    style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li>A significant number of records fall under <strong>“Unknown age”</strong>,
+                                        limiting certain demographic insights.</li>
+                                    <li>Drivers aged <strong>26–64</strong> account for around <strong>75%</strong> of
+                                        fines, reflecting high road usage in working-age groups.</li>
+                                    <li><strong>Young drivers (17–25)</strong> contribute around <strong>13%</strong>,
+                                        matching well-documented higher-risk tendencies.</li>
+                                    <li><strong>Older drivers (65+)</strong> make up roughly <strong>12%</strong>,
+                                        showing steady participation despite lower exposure.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Australian Road Safety Enforcement Visualization | Data from BITRE</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS (same order style as results.html, but for fines) -->
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- XLSX for Excel reading -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <!-- Fines visualisation logic (Excel -> D3 charts) -->
+    <script src="js/fines_charts.js"></script>
+    <!-- Fines enforcement heat map -->
+    <script src="js/fines_enforcement_heatmap.js"></script>
+    <!-- Shared site interactions / animations -->
+    <script src="js/main.js"></script>
+
+    <!-- Initialize Enforcement Heat Map -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const enforcementHeatMap = new FinesEnforcementHeatMap('fines-enforcement-heatmap');
+                await enforcementHeatMap.loadData('data/fines/enforcement_by_jurisdiction.csv');
+                enforcementHeatMap.init();
+                enforcementHeatMap.render();
+                console.log('✓ Fines Enforcement Heat Map loaded successfully');
+            } catch (error) {
+                console.error('Error initializing enforcement heat map:', error);
+                document.getElementById('fines-enforcement-heatmap').innerHTML =
+                    '<div style="padding: 40px; text-align: center; color: #ef4444;">' +
+                    '<strong>Error loading heat map</strong><br>' +
+                    'Please ensure the data file exists at data/fines/enforcement_by_jurisdiction.csv' +
+                    '</div>';
+            }
+        });
+    </script>
+</body>
+
+</html>

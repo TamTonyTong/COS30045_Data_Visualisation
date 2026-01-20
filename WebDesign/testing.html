@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>Testing Activity - Australian Road Safety</title>
+    <link rel="icon" type="image/svg+xml" href="images/webicon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">Australian Road Safety Enforcement</h1>
+                
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="fines.html">Fines Analysis</a></li>
+                    <li><a href="testing.html" class="active">Testing Activity</a></li>
+                    <li><a href="results.html">Test Results</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section with Storytelling -->
+        <section class="testing-hero">
+            <!-- Animated Background Elements -->
+            <div class="testing-hero-bg">
+                <div class="testing-hero-circle-1"></div>
+                <div class="testing-hero-circle-2"></div>
+            </div>
+            
+            <div class="container">
+                <div class="testing-hero-content">
+                    <!-- Main Title -->
+                    <h1 class="testing-hero-title">
+                        The Foundation of Road Safety Enforcement
+                    </h1>
+                    
+                    <!-- Engaging Story Hook -->
+                    <p class="testing-hero-subtitle">
+                        Every year, millions of roadside tests are conducted across Australia. 
+                        <strong>Each test represents a proactive step</strong> toward keeping our roads safe.
+                    </p>
+                    
+                    <!-- Key Statistics Row -->
+                    <div class="testing-hero-stats">
+                        <div class="testing-stat-card">
+                            <div class="testing-stat-number">8</div>
+                            <div class="testing-stat-label">Jurisdictions</div>
+                        </div>
+                        <div class="testing-stat-card">
+                            <div class="testing-stat-number">Millions</div>
+                            <div class="testing-stat-label">Tests Conducted</div>
+                        </div>
+                        <div class="testing-stat-card">
+                            <div class="testing-stat-number">24/7</div>
+                            <div class="testing-stat-label">Enforcement</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Call to Action -->
+                    <div class="testing-hero-cta">
+                        <p class="testing-hero-description">
+                            Discover the patterns behind Australia's road safety testing efforts.
+                            <br>
+                            <strong>Where are tests concentrated? Which substances are prioritized?</strong>
+                        </p>
+                        
+                        <!-- Scroll Indicator -->
+                        <button class="testing-scroll-btn" onclick="document.getElementById('testing').scrollIntoView({behavior: 'smooth'})">
+                            Explore The Data
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4V16M10 16L16 10M10 16L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Total Tests Section -->
+        <section id="testing" class="section">
+            <div class="container">
+                <div class="visualizations-grid">
+                    <!-- Total Tests by Year/Jurisdiction -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Total Tests by Year & Jurisdiction</h3>
+                            <span class="viz-type">Bar Chart</span>
+                        </div>
+                        <div id="testing-total-chart" style="padding: 20px;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Visualize the volume of alcohol and drug tests conducted across different Australian states and territories over the years. Toggle between jurisdiction and year views to identify testing intensity and regional enforcement priorities.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>NSW leads in testing volume</strong> - consistently conducts the highest number of roadside tests across all jurisdictions</li>
+                                    <li><strong>Testing trends show growth</strong> - most states have increased their testing activities over recent years, reflecting stronger enforcement</li>
+                                    <li><strong>Population correlation</strong> - larger states naturally conduct more tests, but per-capita rates reveal different enforcement intensities</li>
+                                    <li><strong>Alcohol tests dominate</strong> - breath testing remains the most common form of roadside testing across all jurisdictions</li>
+                                    <li>Year-over-year analysis reveals periods of <strong>intensive enforcement campaigns</strong> and resource allocation changes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- State Ranking (moved to position 2) -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Tests by State (Ranking)</h3>
+                            <span class="viz-type">Horizontal Bar Chart</span>
+                        </div>
+                        <div id="testing-ranking-chart" style="padding: 20px;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Compare total testing volumes across Australian jurisdictions. States are ranked from highest to lowest testing activity, with medals indicating top performers. Filter by year to see how state rankings have evolved over time.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>Top 3 consistently lead</strong> - NSW, VIC, and QLD maintain their positions as the most active testing jurisdictions</li>
+                                    <li><strong>Territorial differences</strong> - smaller territories like NT and ACT show lower absolute numbers but may have higher per-capita testing rates</li>
+                                    <li><strong>Resource allocation matters</strong> - testing volumes reflect both population size and law enforcement resource distribution</li>
+                                    <li><strong>Yearly variations</strong> - rankings remain relatively stable, indicating consistent enforcement strategies across jurisdictions</li>
+                                    <li>The <strong>medal system</strong> helps visualize which states invest most heavily in proactive road safety enforcement</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alcohol vs Drug Tests Over Time (moved to position 3) -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Alcohol vs Drug Tests Over Time</h3>
+                            <span class="viz-type">Line Chart</span>
+                        </div>
+                        <div id="testing-line-chart" style="padding: 20px;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Compare trends between alcohol (breath tests) and drug testing volumes over the years. Filter by jurisdiction to examine state-specific testing patterns and identify shifts in enforcement priorities between the two substance types.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>Alcohol testing dominates</strong> - breath tests far outnumber drug tests, reflecting easier detection methods and established procedures</li>
+                                    <li><strong>Drug testing is growing</strong> - there's a notable upward trend in drug testing as roadside drug screening technology improves</li>
+                                    <li><strong>Seasonal patterns</strong> - both test types show fluctuations that may correspond to holiday periods and enforcement campaigns</li>
+                                    <li><strong>Jurisdiction strategies differ</strong> - some states prioritize alcohol testing while others show more balanced approaches</li>
+                                    <li>The <strong>gap between lines</strong> illustrates the vast difference in testing scale, with alcohol tests being 10-20x more common</li>
+                                    <li>Recent years show <strong>drug testing acceleration</strong>, reflecting growing awareness of drug-impaired driving risks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alcohol vs Drug Test Share -->
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h3>Alcohol vs Drug Test Share (%)</h3>
+                            <span class="viz-type">100% Stacked Bar Chart</span>
+                        </div>
+                        <div id="testing-stacked-chart" style="padding: 20px;">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                        <div class="viz-description">
+                            <p>Explore the percentage composition of alcohol versus drug tests for each jurisdiction. This 100% stacked bar chart reveals the testing priorities and resource allocation across states. Filter by year to see how the testing mix has evolved over time.</p>
+                            <div style="margin-top: 15px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px;">
+                                <strong style="color: #075985; font-size: 14px; display: block; margin-bottom: 8px;">Key Insights:</strong>
+                                <ul style="color: #0c4a6e; font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                    <li><strong>Alcohol focus is universal</strong> - all jurisdictions dedicate 92-99% of tests to alcohol detection, showing consistent national priorities</li>
+                                    <li><strong>SA leads in drug testing</strong> - South Australia shows the highest proportion of drug tests (~7.5%), indicating different enforcement emphasis</li>
+                                    <li><strong>NT has lowest drug testing</strong> - Northern Territory shows minimal drug testing (<1%), possibly due to resource constraints or strategic choices</li>
+                                    <li><strong>Gradual shifts occurring</strong> - over time, most jurisdictions are slowly increasing their drug testing proportion as technology and awareness improve</li>
+                                    <li>The <strong>100% stacked format</strong> makes it easy to compare relative priorities regardless of total testing volume</li>
+                                    <li>Despite growing drug concerns, <strong>breath testing infrastructure</strong> and speed keeps it as the primary enforcement tool</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dataset Information -->
+                <div class="dataset-info">
+                    <h3>About This Dataset</h3>
+                    <p>
+                        The Total Alcohol and Drug Tests dataset (police_enforcement_2024_alcohol_drug_tests_TAMTONG.xlsx) 
+                        contains aggregated information about all roadside testing activities conducted across Australia. 
+                        This represents the total universe of tests against which positive results can be compared to 
+                        calculate positivity rates and enforcement effectiveness.
+                    </p>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <strong>Purpose:</strong>
+                            <p>Establish baseline testing volumes for calculating positive test rates and understanding enforcement scope.</p>
+                        </div>
+                        <div class="info-card">
+                            <strong>Key Fields:</strong>
+                            <p>JURISDICTION, YEAR, LOCATION, AGEGROUP, METRIC, DETECTIONMETHOD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Australian Road Safety Enforcement Visualization | Data from BITRE</p>
+        </div>
+    </footer>
+
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- SheetJS for Excel file reading -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    
+    <!-- Chart Scripts -->
+    <script src="js/testing_total_bar_chart.js"></script>
+    <script src="js/testing_alcohol_vs_drug_line.js"></script>
+    <script src="js/testing_state_ranking_bar.js"></script>
+    <script src="js/testing_stacked_percentage.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Initialize Charts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Initialize Bar Chart
+                const barChart = new TestingTotalBarChart('testing-total-chart');
+                await barChart.loadData('data/police_enforcement_2024_alcohol_drug_tests_TAMTONG.xlsx');
+                barChart.init();
+                barChart.render();
+                console.log('✓ Testing Total Bar Chart loaded successfully');
+
+                // Initialize Ranking Chart
+                const rankingChart = new TestingStateRankingChart('testing-ranking-chart');
+                await rankingChart.loadData('data/police_enforcement_2024_alcohol_drug_tests_TAMTONG.xlsx');
+                rankingChart.init();
+                rankingChart.render();
+                console.log('✓ State Ranking Chart loaded successfully');
+
+                // Initialize Line Chart
+                const lineChart = new AlcoholVsDrugLineChart('testing-line-chart');
+                await lineChart.loadData('data/police_enforcement_2024_alcohol_drug_tests_TAMTONG.xlsx');
+                lineChart.init();
+                lineChart.render();
+                console.log('✓ Alcohol vs Drug Line Chart loaded successfully');
+
+                // Initialize Stacked Percentage Chart
+                const stackedChart = new TestingStackedPercentageChart('testing-stacked-chart');
+                await stackedChart.loadData('data/police_enforcement_2024_alcohol_drug_tests_TAMTONG.xlsx');
+                stackedChart.init();
+                stackedChart.render();
+                console.log('✓ Stacked Percentage Chart loaded successfully');
+            } catch (error) {
+                console.error('Error initializing charts:', error);
+            }
+        });
+    </script>
+
+</body>
+</html>
